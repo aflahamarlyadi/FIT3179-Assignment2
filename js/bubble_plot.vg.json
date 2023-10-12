@@ -1,11 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
+    "width": 600,
     "height": 400,
     "data": {
-        "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/data/cleaned-world-data-2023.csv"
+        "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/data/filtered-sea-data-2023.csv"
     },
-    "mark": "circle",
+    "mark": {"type": "circle"},
     "encoding": {
         "x": {
             "field": "Physicians per thousand",
