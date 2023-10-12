@@ -1,0 +1,70 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "width": 800,
+    "height": 400,
+    "data": [
+        {
+        "name": "table",
+        "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/data/filtered-sea-data-gdp-sectors-2017.csv",
+        "format": {"type": "csv"},
+        "transform": [
+            { "type": "nest", "keys": ["Country", "Sector"] },
+            {
+                "type": "treemap",
+                "field": "Sector GDP",
+                "method": "squarify",
+                "ratio": 1.6108,
+                "paddingInner": 1,
+                "size": [{"signal": "width"}, {"signal": "height"}]
+            }
+        ]
+        }
+    ],
+    "scales": [
+        {
+        "name": "color",
+        "type": "ordinal",
+        "domain": {"data": "table", "field": "Country"},
+        "range": {"scheme": "tableau20"}
+        }
+    ],
+    "marks": [
+        {
+            "type": "rect",
+            "from": {"data": "table"},
+            "encode": {
+                "enter": {
+                "fill": {"scale": "color", "field": "Country"},
+                "stroke": {"value": "#fff"},
+                "tooltip": {
+                    "signal": "{'Country': datum.Country, 'Sector': datum.Sector, 'Sector GDP': format(datum['Sector GDP'], ',')}"
+                }
+                },
+                    "update": {
+                    "x": {"field": "x0"},
+                    "y": {"field": "y0"},
+                    "x2": {"field": "x1"},
+                    "y2": {"field": "y1"}
+                }
+            }
+        },
+        {
+            "type": "text",
+            "from": {"data": "table"},
+            "encode": {
+                "enter": {
+                    "align": {"value": "right"},
+                    "baseline": {"value": "bottom"},
+                    "fontSize": {"value": 12}
+                },
+                "update": {
+                    "x": {"field": "x1", "offset": -4},
+                    "y": {"field": "y1", "offset": -4},
+                    "text": {"field": "Sector"},
+                    "fill": {"value": "black"},
+                    "fillOpacity": {"signal": "(datum.x1 - datum.x0 > 40) && (datum.y1 - datum.y0 > 20) ? 1 : 0"}
+                }
+            }
+        }
+    ]
+}
