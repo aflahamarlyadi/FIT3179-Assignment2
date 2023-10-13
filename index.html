@@ -8,18 +8,97 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
     
     <title>FIT3179 Assignment 2</title>
 </head>
 <body>
-    <h1>Economic and Social Well-being of South East Asian Countries</h1>
-    <div id="choropleth_map">
-    </div>
-    <div id="bar_chart">
-    </div>
-    <div id="bubble_plot">
-    </div>
-    <div id="treemap">
+    <div class="parent">
+
+        <div class="header">
+            <h1>Health and Economy of South East Asian Countries<br> <h3>by Aflah Hanif Amarlyadi</h3></h1>
+        </div>
+
+        <div id="container">
+            <div>
+                <h2>GDP Per Capita Across South East Asia</h2>
+                <div class="p1">
+                    South East Asia is a region of diverse economies with countries like Singapore boasting a high 
+                    GDP per capita due to its developed and diversified economy, while others like Myanmar have a 
+                    lower GDP per capita reflecting a less developed economic status. For instance, as of 2023, 
+                    Singapore has a projected GDP per capita of around $63,987, while Myanmar's GDP per capita is 
+                    about $1,408. This disparity is a reflection of the different stages of economic development 
+                    and the various challenges and opportunities faced by these countries.
+                </div>
+            </div>
+            <div>
+                <div id="choropleth_map"></div>
+            </div>
+        </div>
+
+        <div id="container">
+            <div>
+                <h2>Unemployment Rate Across South East Asia</h2>
+                <div class="p1">
+                    This bar graph highlights that a high GDP per capita does not always correlate with a low 
+                    unemployment rate, as exemplified by Brunei. This visualization underscores the varied economic 
+                    and labor market conditions in the region, encouraging a deeper analysis beyond GDP figures to 
+                    understand unemployment rates in different South East Asian countries.
+                </div>
+            </div>
+            <div>
+                <div id="bar_chart"></div>
+            </div>
+        </div>
+        
+        <div id="container">
+            <div>
+                <h2>GDP Breakdown by Sector</h2>
+                <div class="p1">
+                    The treemap visualization in the third section provides a detailed breakdown of GDP by sectors 
+                    (Agriculture, Industry, and Services) across various South East Asian countries, showcasing a 
+                    diverse range of economic structures. For instance, Singapore significantly leans towards the 
+                    service sector, contributing to 75.2% of its GDP, while its agricultural sector is non-existent. 
+                    On the other hand, countries like Cambodia and Laos have a notable portion of their GDP coming 
+                    from agriculture. Most countries exhibit a balanced contribution from both the Industry and 
+                    Services sectors, indicative of a transition towards modern economic structures. The 
+                    visualization also hints at varying economic transitions within these countries, with a higher 
+                    percentage of GDP from services and industry sectors possibly indicating a move towards a more 
+                    modernized economy.
+                </div>
+            </div>
+            <div>
+                <div id="treemap"></div>
+            </div>
+        </div>
+
+        <div id="container">
+            <div>
+                <h2>How does the Economy affect Health?</h2>
+                <div class="p1">
+                    The bubble plot in the last section elucidates the relationship between the density of physicians 
+                    per thousand people and the life expectancy across different South East Asian countries, with the 
+                    population size represented by the size of the bubbles. A higher density of physicians generally 
+                    correlates with a higher life expectancy, indicating better healthcare accessibility and standards. 
+                    For instance, Singapore, with a higher physician density of 2.29 per thousand, showcases a 
+                    remarkable life expectancy of 83.1 years. However, the varying bubble sizes elucidate the 
+                    demographic diversity of the region, which is a crucial factor impacting healthcare systems and 
+                    policy formulation. Moreover, the size of the bubbles portrays the population size, with countries 
+                    like Indonesia and the Philippines having noticeably larger bubbles, indicating their substantial 
+                    population. Interestingly, the visualization also hints at the discrepancy in healthcare resources 
+                    among populous countries. For instance, despite its large population, the physician density in 
+                    Indonesia stands at 0.43 per thousand, which is significantly lower compared to Singapore. The 
+                    contrast in physician density and life expectancy between densely populated and less populated 
+                    countries like Brunei, reflects the varying healthcare challenges and resource allocation 
+                    strategies across the region.
+                </div>
+            </div>
+            <div>
+                <div id="bubble_plot"></div>
+            </div>
+        </div>
+
     </div>
 </body>
 <script type="text/javascript">

@@ -10,9 +10,9 @@
     },
     "encoding": {
         "x": {
-            "field": "Population",
+            "field": "Unemployment rate",
             "type": "quantitative",
-            "axis": {"title": "Population"}
+            "axis": {"title": "Unemployment rate"}
         },
         "y": {
             "field": "Country",
@@ -21,7 +21,7 @@
         },
         "tooltip": [
             {"field": "Country", "type": "nominal", "title": "Country"},
-            {"field": "Population", "type": "quantitative", "title": "Population"}
+            {"field": "Unemployment rate", "type": "quantitative", "title": "Unemployment rate"}
         ]
     }
 }
