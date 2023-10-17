@@ -33,10 +33,11 @@
         
         <div id="container">
             <div>
-                <h2>The Progression of Health Care and Quality of Life</h2>
+                <h2>The Progression of Health Care</h2>
                 <div class="p1">
                 </div>
             </div>
+                <div id="dot_plot"></div>
             <div>
             </div>
         </div>
@@ -49,13 +50,12 @@
                 </div>
             </div>
             <div>
-                <div id="bubble_plot"></div>
             </div>
         </div>
         
         <div id="container">
             <div>
-                <h2>GDP Breakdown by Sector</h2>
+                <h2>GDP Comparison</h2>
                 <div class="p1">
                 </div>
             </div>
@@ -86,8 +86,8 @@
     vegaEmbed('#bar_chart', vis2).then(function(result) {
     }).catch(console.error);
 
-    var vis3 = "js/bubble_plot.vg.json";
-    vegaEmbed('#bubble_plot', vis3).then(function(result) {
+    var vis3 = "js/dot_plot.vg.json";
+    vegaEmbed('#dot_plot', vis3).then(function(result) {
     }).catch(console.error);
 
     var vis4 = "js/treemap.vg.json";
