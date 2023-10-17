@@ -1,61 +1,77 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 600,
-    "height": 300,
-    "title": "Index Comparison by Country",
+    "width": 800,
+    "height": 400,
+    "background":"whitesmoke",
     "data": {
-      "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/data/bar_chart.csv"
+        "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/data/bar_chart.csv"
     },
     "params": [
-      {
-        "name": "SelectedIndex",
-        "bind": {
-          "input": "select",
-          "options": [
-            "Cost of living index",
-            "Food price index",
-            "Housing and utilities price index",
-            "Healthcare price index",
-            "Education service price index"
-          ],
-          "name": "Select Index: "
+        {
+            "name": "SelectedCategory",
+            "bind": {
+            "input": "select",
+            "options": [
+                "Cost of living index",
+                "Food price index",
+                "Housing and utilities price index",
+                "Healthcare price index",
+                "Education service price index"
+            ],
+            "name": "Select Category: "
+            }
         }
-      }
     ],
     "transform": [
-      {
-        "calculate": "SelectedIndex == 'Cost of living index world average = 100' ? datum['Cost of living index world average = 100'] : SelectedIndex == 'Food price index world average = 100' ? datum['Food price index world average = 100'] : SelectedIndex == 'Housing and utilities price index world average  = 100' ? datum['Housing and utilities price index world average  = 100'] : SelectedIndex == 'Healthcare price index world average = 100' ? datum['Healthcare price index world average = 100'] : datum['Education service price index world average = 100']",
-        "as": "SelectedValue"
-      }
-    ],
-    "mark": "bar",
-    "encoding": {
-      "y": {
-        "field": "Country",
-        "type": "ordinal",
-        "title": "Country",
-        "sort": "-x"
-      },
-      "x": {
-        "field": "SelectedValue",
-        "type": "quantitative",
-        "title": "Index Value"
-      },
-      "color": {
-        "field": "Country",
-        "type": "nominal",
-        "legend": {
-          "title": "Country"
-        },
-        "scale": {
-          "domain": ["Brunei", "Myanmar", "Cambodia", "Indonesia", "Laos", "Malaysia", "Philippines", "Singapore", "Thailand", "Vietnam"],
-          "range": ["#ff9da6", "#eeca3b", "#4c78a8", "#9d755d", "#b279a2", "#72b7b2", "#bab0ac", "#e45756", "#f58518", "#54a24b"]
+        {
+            "calculate": "SelectedCategory == 'Cost of living index' ? datum['Cost of living index world average = 100'] : SelectedCategory == 'Food price index' ? datum['Food price index world average = 100'] : SelectedCategory == 'Housing and utilities price index' ? datum['Housing and utilities price index world average  = 100'] : SelectedCategory == 'Healthcare price index' ? datum['Healthcare price index world average = 100'] : datum['Education service price index world average = 100']",
+            "as": "SelectedValue"
         }
-      },
-      "tooltip": [
-        {"field": "Country", "type": "ordinal", "title": "Country"},
-        {"field": "SelectedValue", "type": "quantitative", "title": "Index Value"}
-      ]
-    }
-  }
+    ],
+    "layer": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "y": {
+                    "field": "Country",
+                    "type": "ordinal",
+                    "title": "Country",
+                    "sort": "-x"
+                },
+                "x": {
+                    "field": "SelectedValue",
+                    "type": "quantitative",
+                    "title": "Index Value"
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal",
+                    "legend": {
+                    "title": "Country"
+                    },
+                    "scale": {
+                    "domain": ["Brunei", "Myanmar", "Cambodia", "Indonesia", "Laos", "Malaysia", "Philippines", "Singapore", "Thailand", "Vietnam"],
+                    "range": ["#ff9da6", "#eeca3b", "#4c78a8", "#9d755d", "#b279a2", "#72b7b2", "#bab0ac", "#e45756", "#f58518", "#54a24b"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "Country", "type": "ordinal", "title": "Country"},
+                    {"field": "SelectedValue", "type": "quantitative", "title": "Index Value"}
+                ]
+            }
+        },
+        {
+            "mark": {"type": "rule"},
+            "encoding": {
+            "x": {
+                "datum": 100,
+                "type": "quantitative"
+            },
+            "tooltip": {
+                "value": "World Average"
+            }
+            }
+        }
+    ]
+}
   
