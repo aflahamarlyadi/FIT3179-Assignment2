@@ -1,24 +1,31 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 600,
-    "height": 400,
+    "width": 800,
+    "height": 560,
+    "background":"whitesmoke",
     "projection": {
         "type": "equirectangular",
-        "center": [130, 6],
-        "scale": 500,
-        "translate": [400, 200]},
+        "center": [120, 9],
+        "scale": 800
+    },
+    "params": [
+        {
+            "name": "yearSelection",
+            "value": 1990,
+            "bind":{
+                "input": "range",
+                "min": 1990,
+                "max": 2021,
+                "step": 1,
+                "name": "Year: "
+            }
+        }
+    ],
     "layer": [
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/js/ne_110m.json",
-                "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
-            },
-            "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
-        },
-        {
-            "data": {
-                "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/js/ne_110m.json",
-                "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+                "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/js/ne_50m.json",
+                "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
             },
             "transform": [
                 {
@@ -31,38 +38,55 @@
         },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/js/ne_110m.json",
-                "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+                "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/js/ne_50m.json",
+                "format": {"type": "topojson", "feature": "ne_50m_ocean"}
+            },
+            "mark": {"type": "geoshape", "fill": "skyblue"}
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/js/ne_50m.json",
+                "format": {"type": "topojson", "feature": "ne_50m_graticules_30"}
+            },
+            "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/data/choropleth_map.csv",
+                "format": {"type": "csv"}
             },
             "transform": [
                 {
-                    "lookup": "properties.NAME",
+                    "lookup": "Country",
                     "from": {
                         "data": {
-                            "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/data/filtered-sea-data-2023.csv"
+                            "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/js/ne_50m.json",
+                            "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
                         },
-                        "key": "Country",
-                        "fields": ["Population", "GDP"]
-                    }
+                        "key": "properties.NAME"
+                    },
+                    "as": "geo"
                 },
                 {
-                    "calculate": "round(datum.GDP / datum.Population)",
-                    "as": "GDP Per Capita"
+                    "filter": "datum.Year == yearSelection"
                 }
             ],
-            "mark": {"type": "geoshape", "stroke": "white"},
+            "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
             "encoding": {
+                "shape": {"field": "geo" ,"type": "geojson"},
                 "color": {
-                    "field": "GDP Per Capita",
+                    "field": "Human Development Index (0 - 1)",
                     "type": "quantitative",
-                    "scale": {"type": "log"},
-                    "legend": {"title": "GDP Per Capita"}
+                    "scale": {
+                        "domain": [0, 1],
+                        "range": ["#f2f0f7", "#54278f"]
+                    },
+                    "legend": {"title": "Human Development Index"}
                 },
                 "tooltip": [
-                    {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-                    {"field": "GDP Per Capita", "type": "quantitative", "title": "GDP Per Capita"},
-                    {"field": "GDP", "type": "quantitative", "title": "GDP"},
-                    {"field": "Population", "type":"quantitative", "title": "Population"}
+                    {"field": "geo.properties.NAME", "type": "nominal", "title": "Country"},
+                    {"field": "Year", "type": "ordinal", "title": "Year"},
+                    {"field": "Human Development Index (0 - 1)", "type": "quantitative", "title": "HDI"}
                 ]
             }
         }
