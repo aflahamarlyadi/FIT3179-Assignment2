@@ -4,28 +4,30 @@
     "height": 400,
     "data": [
         {
-        "name": "table",
-        "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/data/filtered-sea-data-gdp-sectors-2017.csv",
-        "format": {"type": "csv"},
-        "transform": [
-            { "type": "nest", "keys": ["Country", "Sector"] },
-            {
-                "type": "treemap",
-                "field": "Sector GDP",
-                "method": "squarify",
-                "ratio": 1.6108,
-                "paddingInner": 1,
-                "size": [{"signal": "width"}, {"signal": "height"}]
-            }
-        ]
+            "name": "table",
+            "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/data/treemap.csv",
+            "format": {"type": "csv"},
+            "transform": [
+                {
+                    "type": "nest",
+                    "keys": ["Country", "Sector"] },
+                {
+                    "type": "treemap",
+                    "field": "Sector GDP",
+                    "method": "squarify",
+                    "ratio": 1.6108,
+                    "paddingInner": 1,
+                    "size": [{"signal": "width"}, {"signal": "height"}]
+                }
+            ]
         }
     ],
     "scales": [
         {
-        "name": "color",
-        "type": "ordinal",
-        "domain": {"data": "table", "field": "Country"},
-        "range": {"scheme": "tableau20"}
+            "name": "color",
+            "type": "ordinal",
+            "domain": ["Brunei", "Myanmar", "Cambodia", "Indonesia", "Laos", "Malaysia", "Philippines", "Singapore", "Thailand", "Vietnam"],
+            "range": ["#ff9da6", "#eeca3b", "#4c78a8", "#9d755d", "#b279a2", "#72b7b2", "#bab0ac", "#e45756", "#f58518", "#54a24b"]
         }
     ],
     "marks": [
@@ -65,6 +67,13 @@
                     "fillOpacity": {"signal": "(datum.x1 - datum.x0 > 40) && (datum.y1 - datum.y0 > 20) ? 1 : 0"}
                 }
             }
+        }
+    ],
+    "legends": [
+        {
+            "fill": "color",
+            "title": "Country",
+            "type": "symbol"
         }
     ]
 }
