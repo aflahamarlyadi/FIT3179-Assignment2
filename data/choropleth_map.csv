@@ -1,4 +1,4 @@
-Country,Code,ContinentCode,Year,Gross Domestic Product billions of U.S. dollars,GDP per capita current U.S. dollars,Population size in millions
+Country,Code,ContinentCode,Year,GDP (billions of USD),GDP Per Capita (USD),Population (millions)
 Brunei,BRN,AS,2010,13.71,34609.7,0.4
 Brunei,BRN,AS,2011,18.53,46139.11,0.4
 Brunei,BRN,AS,2012,19.05,46844.2,0.41
