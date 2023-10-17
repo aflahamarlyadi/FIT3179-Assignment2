@@ -1,0 +1,11 @@
+Country,Code,ContinentCode,Year,Cost of living index world average = 100,Food price index world average = 100,Housing and utilities price index world average  = 100,Healthcare price index world average = 100,Education service price index world average = 100
+Brunei,BRN,AS,2017,72.31,103.366,39.29,68.67,61.49
+Burma (Myanmar),MMR,AS,2017,41.08,66.501,22.258,22.18,24.28
+Cambodia,KHM,AS,2017,52.69,79.02,47.687,30.95,26.25
+Indonesia,IDN,AS,2017,54.52,90.192,29.672,34.05,41.4
+Laos,LAO,AS,2017,53.79,82.267,37.887,22.3,17.66
+Malaysia,MYS,AS,2017,57.56,76.82,38.869,51.61,65.5
+Philippines,PHL,AS,2017,55.15,79.097,42.287,47.07,43.15
+Singapore,SGP,AS,2017,112.16,127.302,123.176,136.56,131.65
+Thailand,THA,AS,2017,56.12,79.409,36.546,43.3,43.22
+Vietnam,VNM,AS,2017,50.03,73.294,47.334,31.42,28
