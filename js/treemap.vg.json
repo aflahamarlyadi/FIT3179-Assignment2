@@ -39,7 +39,7 @@
                 "fill": {"scale": "color", "field": "Country"},
                 "stroke": {"value": "#fff"},
                 "tooltip": {
-                    "signal": "{'Country': datum.Country, 'Sector': datum.Sector, 'Sector GDP': format(datum['Sector GDP'], ',')}"
+                    "signal": "{'Country': datum.Country, 'Country GDP': datum.['Country GDP'],'Sector': datum.Sector, 'Sector GDP': format(datum['Sector GDP'], ',')}"
                 }
                 },
                     "update": {
