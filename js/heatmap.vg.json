@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
+    "width": 700,
     "height": 400,
     "background": "whitesmoke",
     "data": {
@@ -51,7 +51,7 @@
             "mark": {"type": "text", "align": "center", "fontSize": 12, "fontWeight": "normal", "font": "Roboto", "opacity": 0.2},
             "encoding": {
                 "text":{"value":["Singapore, Brunei, Malaysia", "consistently boasts less than", "20 children deaths per 1000 live births"]},
-                "x": {"value": 650},
+                "x": {"value": 550},
                 "y": {"value": 50}
             }
         }

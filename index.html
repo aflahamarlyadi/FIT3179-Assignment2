@@ -9,6 +9,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
     
     <title>FIT3179 Assignment 2</title>
@@ -17,25 +22,30 @@
     <div class="parent">
 
         <div class="header">
-            <h1>Development Across South East Asia<br> <h3>by Aflah Hanif Amarlyadi</h3></h1>
+            <h1>Development Across South East Asia</h1>
         </div>
 
         <div id="container">
             <div>
-                <h2>Historical Landscape of Human Development</h2>
-                <div class="p1">
-                </div>
+                <h2>Rise of Human Development (1990-2021)</h2>
+                <p>
+                    The <span class= "blue">Human Development Index (HDI)</span> offers a composite measurement that encapsulates three pivotal dimensions of human progress: <span class= "blue">life expectancy, education, and per capita income levels</span>.
+                    It is a scale ranging from 0 (low development) to 1 (high development), and serves as a barometer for understanding the <span class= "blue">overall well-being and quality of life</span> within nations.
+                    As we transition through the years, observe the deepening of colors, a testament to the region's strides in improving health, education, and economic conditions.
+                </p>
             </div>
-            <div>
+            <div class="vis">
                 <div id="choropleth_map"></div>
             </div>
         </div>
         
         <div id="container">
             <div>
-                <h2>The Progression of Health Care: Life Expectancy</h2>
-                <div class="p1">
-                </div>
+                <h2>Progression of Health Care: Life Expectancy</h2>
+                <p>
+                    <span class= "blue">Life expectancy</span> is one of the most direct indicators of a nation's health and well-being. The dot plot below captures the progression of life expectancy in various Southeast Asian countries over a span of three decades.
+                    Nearly all countries in the region experienced <span class= "blue">a significant rise in life expectancy</span> from 1990 to 2021. This trend underscores the region's collective efforts in bolstering health infrastructure, advancing medical research, and embracing preventative health measures.
+                </p>
             </div>
                 <div id="dot_plot"></div>
             <div>
@@ -45,7 +55,10 @@
         
         <div id="container">
             <div>
-                <h2>The Progression of Health Care: Children Mortality</h2>
+                <h2>Progression of Health Care: Children Mortality</h2>
+                <p>
+                    From 1990 to 2021, Southeast Asia has made substantial strides in <span class= "blue">reducing child mortality</span>, as illustrated by this heatmap. The transformation from lighter shades distributed across the heatmap to deeper shades closer to the bottom of the heatmap over the years signals a consistent and significant decrease in the number of children deaths per 1000 live births.
+                </p>
                 <div class="p1">
                     <div id="heatmap"></div>
                 </div>
@@ -56,9 +69,10 @@
         
         <div id="container">
             <div>
-                <h2>GDP Comparison & Breakdown</h2>
-                <div class="p1">
-                </div>
+                <h2>GDP Comparison and Breakdown</h2>
+                <p>
+                    This treemap provides a captivating glance into the <span class= "blue">composition of Southeast Asia's GDP</span>, categorized by key sectors: <span class= "blue">Agriculture, Industry, and Services</span>. The dominance of the Services sector across all nations underscores its significance in the modern economies of the region. Notably, while Agriculture has historically been a mainstay for many Southeast Asian countries, its relative share in the GDP seems to have been eclipsed by the other two sectors in several nations.
+                </p>
             </div>
             <div>
                 <div id="treemap"></div>
@@ -67,13 +81,23 @@
         
         <div id="container">
             <div>
-                <h2>The Cost of Living In Recent Years</h2>
-                <div class="p1">
-                </div>
+                <h2>Cost of Living In Recent Years</h2>
+                <p>
+                    This bar chart vividly showcases the <span class= "blue">cost of living across Southeast Asian countries</span>, benchmarked against a world average index value of 100. At a glance, Singapore stands out as the sole nation surpassing the global mean, indicating a higher cost of living relative to its regional counterparts. Toggle between <span class= "blue">food, housing & utilities, healthcare, and education price indices</span>, to get a comprehensive view of each nation's economic landscape. 
+                </p>
             </div>
             <div>
                 <div id="bar_chart"></div>
             </div>
+        </div>
+
+        <div class="footer">
+            <p>
+                <span class= "blue">Created by:</span> Aflah Hanif Amarlyadi <br><br>
+                <span class= "blue">Datasets used:</span> <a href="https://hdr.undp.org/data-center/documentation-and-downloads" target="_blank">Human Development Index and components</href></a>, 
+                <a href="https://www.theglobaleconomy.com/download-data.php" target="_blank">Economic data</href></a>, and 
+                <a href="https://www.kaggle.com/datasets/rajkumarpandey02/list-of-countries-by-gdp-sector-composition" target="_blank">List of Countries by GDP Sector Composition</href></a>
+            </p>
         </div>
 
     </div>
