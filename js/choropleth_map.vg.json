@@ -86,7 +86,11 @@
                 "tooltip": [
                     {"field": "geo.properties.NAME", "type": "nominal", "title": "Country"},
                     {"field": "Year", "type": "ordinal", "title": "Year"},
-                    {"field": "Human Development Index (0 - 1)", "type": "quantitative", "title": "HDI"}
+                    {"field": "Human Development Index (0 - 1)", "type": "quantitative", "title": "HDI"},
+                    {"field": "Life expectancy", "type": "quantitative", "title": "Life Expectancy (in years)"},
+                    {"field": "Expected Years of Schooling", "type": "quantitative", "title": "Expected Years of Schooling"},
+                    {"field": "Mean Years of Schooling", "type": "quantitative", "title": "Mean Years of Schooling"},
+                    {"field": "GNI per capita (PPP $)", "type": "quantitative", "title": "GNI per capita (PPP $)"}
                 ]
             }
         }
