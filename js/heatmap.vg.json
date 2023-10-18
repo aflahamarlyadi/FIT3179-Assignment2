@@ -1,0 +1,53 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 400,
+    "background":"whitesmoke",
+    "data": {
+        "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/data/heatmap.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 0.5
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "ordinal",
+            "title": "Year"
+        },
+        "y": {
+            "field": "Deaths of children under five years of age per 1000 live births",
+            "type": "quantitative",
+            "bin": {"step": 10},
+            "title": "Children deaths per 1000 live births"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Number of Countries",
+            "scale": {"scheme": "reds"}
+        },
+        "tooltip": [
+            {
+                "aggregate": "count",
+                "field": "Country",
+                "type": "quantitative",
+                "title": "Number of Countries"
+            },
+            {
+                "aggregate": "sum",
+                "field": "Deaths of children under five years of age per 1000 live births",
+                "type": "quantitative",
+                "title": "Total Children Deaths per 1000 live births"
+            }
+        ]
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        }
+    }
+}
+  
