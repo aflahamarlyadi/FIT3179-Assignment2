@@ -2,79 +2,86 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 800,
     "height": 400,
-    "background":"whitesmoke",
+    "background": "whitesmoke",
+    "params": [
+        {
+            "name": "yearSelection",
+            "value": 2021,
+            "bind": {
+                "input": "range",
+                "min": 1990,
+                "max": 2021,
+                "step": 1,
+                "name": "Year: "
+            }
+        }
+    ],
     "data": {"url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/data/dot_plot.csv"},
     "transform": [
         {
-            "filter": "datum.Year == 1990 || datum.Year == 2021"
+            "filter": "datum.Year == 1990 || datum.Year == yearSelection"
         }
     ],
     "encoding": {
-      "y": {
-        "field": "Country",
-        "type": "nominal",
-        "sort": "-x",
-        "axis": {
-          "title": "Country",
-          "labelFontSize": 12
-        }
-      },
-      "color": {
-        "field": "Year",
-        "type": "ordinal",
-        "scale": {"range": ["#ff7f0e", "#1f77b4"]},
-        "legend": {
-          "title": "Year",
-          "labelFontSize": 12
-        }
-      },
-      "tooltip": [
-        {"field": "Country", "type": "nominal", "title": "Country:"},
-        {"field": "Year", "type": "ordinal", "title": "Year:"},
-        {"field": "Life expectancy in years", "type": "quantitative", "title": "Life Expectancy:"}
-      ]
-    },
-    
-    "layer": [
-      {
-        "mark": "line",
-        "encoding": {
-          "x": {
-            "field": "Life expectancy in years",
-            "type": "quantitative",
-            "scale": {
-              "domain": [45, 90]
-            }
-          },
-          "detail": {
+        "y": {
             "field": "Country",
-            "type": "nominal"
-          },
-          "color": {
-            "value": "#aaa"
-          }
-        }
-      },
-      {
-        "mark": { "type":"point", "filled":true, "opacity":1 },
-        "encoding": {
-          "x": {
-            "field": "Life expectancy in years",
-            "type": "quantitative",
-            "scale": {
-              "domain": [45, 90]
-            },
+            "type": "nominal",
+            "sort": "-x",
             "axis": {
-              "title": "Life Expectancy in Years",
-              "labelFontSize": 12,
-              "grid": true
+                "title": "Country",
+                "labelFontSize": 12
             }
-          },
-          "size": {
-            "value": 150
-          }
+        },
+        "color": {
+            "field": "Year",
+            "type": "ordinal",
+            "scale": {"range": ["#ff7f0e", "#1f77b4"]},
+            "legend": {
+                "title": "Year",
+                "labelFontSize": 12
+            }
+        },
+        "tooltip": [
+            {"field": "Country", "type": "nominal", "title": "Country:"},
+            {"field": "Year", "type": "ordinal", "title": "Year:"},
+            {"field": "Life expectancy in years", "type": "quantitative", "title": "Life Expectancy:"}
+        ]
+    },
+    "layer": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Life expectancy in years",
+                    "type": "quantitative",
+                    "scale": {"domain": [45, 90]}
+                },
+                "detail": {
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "color": {
+                    "value": "#aaa"
+                }
+            }
+        },
+        {
+            "mark": { "type":"point", "filled":true, "opacity":1 },
+            "encoding": {
+                "x": {
+                    "field": "Life expectancy in years",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [45, 90]
+                    },
+                        "axis": {
+                        "title": "Life Expectancy in Years",
+                        "labelFontSize": 12,
+                        "grid": true
+                    }
+                },
+                "size": {"value": 150}
+            }
         }
-      }
     ]
-  }
-  
+}
