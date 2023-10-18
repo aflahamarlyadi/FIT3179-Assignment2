@@ -82,6 +82,14 @@
                 },
                 "size": {"value": 150}
             }
+        },
+        {
+            "mark": {"type": "text", "align": "center", "baseline": "top", "dx": 5, "dy": 5, "fontSize": 12, "fontWeight": "normal", "font": "Roboto", "opacity": 0.2},
+            "encoding": {
+                "text":{"value":["Life Expectancy across all countries", "drops at 2021 due to", "the Covid-19 pandemic"]},
+                "x": {"value": 150},
+                "y": {"value": 50}
+            }
         }
     ]
 }

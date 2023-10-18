@@ -2,52 +2,58 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 800,
     "height": 400,
-    "background":"whitesmoke",
+    "background": "whitesmoke",
     "data": {
         "url": "https://raw.githubusercontent.com/aflahamarlyadi/FIT3179-Assignment2/main/data/heatmap.csv"
     },
-    "mark": {
-        "type": "rect",
-        "stroke": "white",
-        "strokeWidth": 0.5
-    },
-    "encoding": {
-        "x": {
-            "field": "Year",
-            "type": "ordinal",
-            "title": "Year"
-        },
-        "y": {
-            "field": "Deaths of children under five years of age per 1000 live births",
-            "type": "quantitative",
-            "bin": {"step": 10},
-            "title": "Children deaths per 1000 live births"
-        },
-        "color": {
-            "aggregate": "count",
-            "type": "quantitative",
-            "title": "Number of Countries",
-            "scale": {"scheme": "reds"}
-        },
-        "tooltip": [
-            {
-                "aggregate": "count",
-                "field": "Country",
-                "type": "quantitative",
-                "title": "Number of Countries"
+    "layer": [
+        {
+            "mark": {
+                "type": "rect",
+                "stroke": "white",
+                "strokeWidth": 0.5
             },
-            {
-                "aggregate": "sum",
-                "field": "Deaths of children under five years of age per 1000 live births",
-                "type": "quantitative",
-                "title": "Total Children Deaths per 1000 live births"
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal",
+                    "title": "Year"
+                },
+                "y": {
+                    "field": "Deaths of children under five years of age per 1000 live births",
+                    "type": "quantitative",
+                    "bin": {"step": 20},
+                    "title": "Children deaths per 1000 live births"
+                },
+                "color": {
+                    "aggregate": "count",
+                    "type": "quantitative",
+                    "title": "Number of Countries",
+                    "scale": {"scheme": "reds"}
+                },
+                "tooltip": [
+                    {
+                        "aggregate": "count",
+                        "field": "Country",
+                        "type": "quantitative",
+                        "title": "Number of Countries"
+                    },
+                    {
+                        "aggregate": "sum",
+                        "field": "Deaths of children under five years of age per 1000 live births",
+                        "type": "quantitative",
+                        "title": "Total Children Deaths per 1000 live births"
+                    }
+                ]
             }
-        ]
-    },
-    "config": {
-        "view": {
-            "stroke": "transparent"
+        },
+        {
+            "mark": {"type": "text", "align": "center", "baseline": "top", "dx": 5, "dy": 5, "fontSize": 12, "fontWeight": "lighter", "font": "Roboto", "opacity": 0.1},
+            "encoding": {
+                "text":{"value":["Singapore, Brunei, Malaysia", "consistently boasts less than", "20 children deaths per 1000 live births"]},
+                "x": {"value": 650},
+                "y": {"value": 50}
+            }
         }
-    }
+    ]
 }
-  

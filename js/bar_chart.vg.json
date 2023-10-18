@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
+    "width": 750,
     "height": 400,
     "background":"whitesmoke",
     "data": {
@@ -41,17 +41,18 @@
                 "x": {
                     "field": "SelectedValue",
                     "type": "quantitative",
-                    "title": "Index Value"
+                    "title": "Index Value",
+                    "scale": {
+                        "domain": [0,140]
+                    }
                 },
                 "color": {
                     "field": "Country",
                     "type": "nominal",
-                    "legend": {
-                    "title": "Country"
-                    },
+                    "legend": {"title": "Country"},
                     "scale": {
-                    "domain": ["Brunei", "Myanmar", "Cambodia", "Indonesia", "Laos", "Malaysia", "Philippines", "Singapore", "Thailand", "Vietnam"],
-                    "range": ["#ff9da6", "#eeca3b", "#4c78a8", "#9d755d", "#b279a2", "#72b7b2", "#bab0ac", "#e45756", "#f58518", "#54a24b"]
+                        "domain": ["Brunei", "Myanmar", "Cambodia", "Indonesia", "Laos", "Malaysia", "Philippines", "Singapore", "Thailand", "Vietnam"],
+                        "range": ["#ff9da6", "#eeca3b", "#4c78a8", "#9d755d", "#b279a2", "#72b7b2", "#bab0ac", "#e45756", "#f58518", "#54a24b"]
                     }
                 },
                 "tooltip": [
@@ -63,13 +64,21 @@
         {
             "mark": {"type": "rule"},
             "encoding": {
-            "x": {
-                "datum": 100,
-                "type": "quantitative"
-            },
-            "tooltip": {
-                "value": "World Average"
+                "x": {
+                    "datum": 100,
+                    "type": "quantitative"
+                },
+                "tooltip": {
+                    "value": "World Average"
+                }
             }
+        },
+        {
+            "mark": {"type": "text", "align": "center", "baseline": "top", "dx": 5, "dy": 5, "fontSize": 12, "fontWeight": "normal", "font": "Roboto", "opacity": 0.2},
+            "encoding": {
+                "text":{"value":["Singapore is the only country","that is above world average"]},
+                "x": {"value": 650},
+                "y": {"value": 50}
             }
         }
     ]
