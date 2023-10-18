@@ -71,7 +71,7 @@
             }
         },
         {
-            "mark": {"type": "text", "align": "center", "baseline": "top", "dx": 5, "dy": 5, "fontSize": 12, "fontWeight": "normal", "font": "Roboto", "opacity": 0.2},
+            "mark": {"type": "text", "align": "center", "fontSize": 12, "fontWeight": "normal", "font": "Roboto", "opacity": 0.2},
             "encoding": {
                 "text":{"value":["Singapore is the only country","that is above world average"]},
                 "x": {"value": 650},
@@ -79,13 +79,20 @@
             }
         },
         {
-            "mark": {"type": "text", "align": "center", "baseline": "top", "dx": 5, "dy": 5, "fontSize": 12, "fontWeight": "normal", "font": "Roboto", "opacity": 0.2},
+            "mark": {"type": "text", "align": "center", "fontSize": 12, "fontWeight": "normal", "font": "Roboto", "opacity": 0.2},
             "encoding": {
                 "text":{"value":["World Average: 100"]},
-                "x": {"value": 590},
+                "x": {"value": 600},
                 "y": {"value": 380}
             }
         }
-    ]
+    ],
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {"labelFont": "Roboto", "titleFont": "Roboto","titleFontSize":14, "labelFontSize":12},
+        "legend": {"labelFont": "Roboto", "titleFont": "Roboto","titleFontSize":14, "labelFontSize":12}
+    }
 }
   

@@ -48,12 +48,19 @@
             }
         },
         {
-            "mark": {"type": "text", "align": "center", "baseline": "top", "dx": 5, "dy": 5, "fontSize": 12, "fontWeight": "lighter", "font": "Roboto", "opacity": 0.1},
+            "mark": {"type": "text", "align": "center", "fontSize": 12, "fontWeight": "normal", "font": "Roboto", "opacity": 0.2},
             "encoding": {
                 "text":{"value":["Singapore, Brunei, Malaysia", "consistently boasts less than", "20 children deaths per 1000 live births"]},
                 "x": {"value": 650},
                 "y": {"value": 50}
             }
         }
-    ]
+    ],
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {"labelFont": "Roboto", "titleFont": "Roboto","titleFontSize":14, "labelFontSize":12},
+        "legend": {"labelFont": "Roboto", "titleFont": "Roboto","titleFontSize":14, "labelFontSize":12}
+    }
 }

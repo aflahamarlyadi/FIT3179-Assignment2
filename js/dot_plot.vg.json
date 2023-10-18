@@ -75,7 +75,7 @@
                         "domain": [45, 90]
                     },
                         "axis": {
-                        "title": "Life Expectancy in Years",
+                        "title": "Life Expectancy",
                         "labelFontSize": 12,
                         "grid": true
                     }
@@ -91,5 +91,12 @@
                 "y": {"value": 50}
             }
         }
-    ]
+    ],
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {"labelFont": "Roboto", "titleFont": "Roboto","titleFontSize":14, "labelFontSize":12},
+        "legend": {"labelFont": "Roboto", "titleFont": "Roboto","titleFontSize":14, "labelFontSize":12}
+    }
 }
