@@ -67,9 +67,6 @@
                 "x": {
                     "datum": 100,
                     "type": "quantitative"
-                },
-                "tooltip": {
-                    "value": "World Average"
                 }
             }
         },
@@ -79,6 +76,14 @@
                 "text":{"value":["Singapore is the only country","that is above world average"]},
                 "x": {"value": 650},
                 "y": {"value": 50}
+            }
+        },
+        {
+            "mark": {"type": "text", "align": "center", "baseline": "top", "dx": 5, "dy": 5, "fontSize": 12, "fontWeight": "normal", "font": "Roboto", "opacity": 0.2},
+            "encoding": {
+                "text":{"value":["World Average: 100"]},
+                "x": {"value": 590},
+                "y": {"value": 380}
             }
         }
     ]
